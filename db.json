@@ -1,18 +1,18 @@
 {
-  "todos": [
+  "topics": [
     {
       "id": 1,
-      "title": "To do 1",
+      "title": "to learn angular",
       "completed": false
     },
     {
       "id": 2,
-      "title": "To do 2",
-      "completed": false
+      "title": "to learn french",
+      "completed": true
     },
     {
       "id": 3,
-      "title": "To do 3",
+      "title": "to learn some",
       "completed": false
     }
   ]
