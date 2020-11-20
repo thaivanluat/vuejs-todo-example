@@ -1,16 +1,11 @@
 {
-          id: 1,
-          title: "To do 1",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "To do 2",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "To do 3",
-          completed: false
-        }
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
