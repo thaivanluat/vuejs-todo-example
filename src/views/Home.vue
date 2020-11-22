@@ -24,30 +24,35 @@ export default {
   },
   methods: {
     deleteTodo(id) {
-      axios.delete(`https://my-json-server.typicode.com/thaivanluat/vuejs-todo-example/todos/${id}`).then(this.todos = this.todos.filter(todo => todo.id !== id))
-      .catch(err => console.log(err));
+      // axios.delete(`https://my-json-server.typicode.com/thaivanluat/vuejs-todo-example/todos/${id}`).then(this.todos = this.todos.filter(todo => todo.id !== id))
+      // .catch(err => console.log(err));
+
+      this.todos = this.todos.filter(todo => todo.id !== id);
+
+      console.log(this.todos.length);
     },
 
     addTodo(newTodo) {
-      // let id = this.todos.length + 1;
+      let maxId = 0;
+      this.todos.map(function(obj){     
+          if (obj.id > maxId) maxId = obj.id;    
+      });
+
+      let id = maxId + 1;
+
+      newTodo.id =id;
+
+      this.todos = [...this.todos, newTodo];
+
       // newTodo.id = id;
-      // this.todos = [...this.todos, newTodo];
 
-      const { title, completed } = newTodo;
-
-      axios.post('https://my-json-server.typicode.com/thaivanluat/vuejs-todo-example/todos', {
-        title,
-        completed
-      }).then(res => this.todos = [...this.todos, res.data])
-      .catch(err => console.log(err))
-
+      // axios.post('https://my-json-server.typicode.com/thaivanluat/vuejs-todo-example/todos', newTodo).then(res => this.todos = [...this.todos, res.data])
+      // .catch(err => console.log(err))
     },
   },
 
   created() {
     axios.get('https://my-json-server.typicode.com/thaivanluat/vuejs-todo-example/todos').then(res => this.todos = res.data).catch(err => console.log(err));
-
-    console.log(this.todos);
   }
 }
 </script>
