@@ -1,4 +1,7 @@
-# vueapp to do list
+# VueJS - Simple to do list 
+# Using Vue js 2.x
+
+![alt text](https://user-images.githubusercontent.com/25612169/108623560-30dfd000-7472-11eb-9e0a-06aac52048b0.png)
 
 ## Project setup
 ```
